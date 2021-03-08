@@ -1,0 +1,67 @@
+
+@import "include-media/dist/_include-media.scss";
+
+nav {
+    align-items: center;
+    background-color: var(--grayLight);
+    display: flex;
+    height: 6.3rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    @include media(">=tablet") {
+        height: 10.3rem;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-right: 4.7rem;
+
+            @include media(">=tablet") {
+                margin-right: 3.9rem;
+            }
+
+            a {
+                display: inline-block;
+                font-size: 1.4rem;
+                line-height: 4rem;
+
+                @include media(">=tablet") {
+                    font-size: 2.8rem;
+                }
+
+                &::after {
+                    background-color: var(--navLineLight);
+                    content: '';
+                    display: block;
+                    height: .3rem;
+                    width: 100%;
+
+                    @include media(">=tablet") {
+                        margin-top: 5px;
+                    }
+                }
+
+                &.active {
+                    font-weight: 600;
+
+                    &::after {
+                        background-color: var(--navLine);
+                    }
+                }
+
+                &:hover {
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
